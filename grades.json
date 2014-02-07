@@ -1,0 +1,13 @@
+{
+    "email": "kithwon@berkeley.edu", 
+    "grades": {
+        "lab1": {
+            "earned": 12, 
+            "possible": 12
+        }
+    }, 
+    "id": "23626255", 
+    "login": "deadmau", 
+    "name": "Ki Hyun Won", 
+    "url": "git@github.com:deadmau/stat133.git"
+}
