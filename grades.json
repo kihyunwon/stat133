@@ -12,9 +12,12 @@
         "lab3": {
             "earned": 27, 
             "possible": 30
+        }, 
+        "lab4": {
+            "earned": 30, 
+            "possible": 30
         }
     }, 
-    "id": "23626255", 
     "login": "deadmau", 
     "name": "Ki Hyun Won", 
     "url": "git@github.com:deadmau/stat133.git"
