@@ -125,7 +125,7 @@ class GradeBook(object):
 	>>> a.max_scores[0] == 30
 	True
         """
-        self.raw_grades = simulate_grade_df(grade_arr, student_ids, item_list)
+        self.raw_grades = DataFrame(grade_arr, student_ids, item_list)
         self.total_grades = None
         self.letter_grades = None
         self.max_scores = max_scores
