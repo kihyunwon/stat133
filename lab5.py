@@ -2,7 +2,7 @@
 #they may help you save time
 from numpy import array
 from numpy.random import rand
-from pandas import DataFrame
+from pandas import DataFrame, Series
 
 
 def simulate_grades(class_size, max_scores=[100,100,100]):
@@ -54,7 +54,7 @@ def simulate_grades(class_size, max_scores=[100,100,100]):
     >>> g[:,2].max() < 40
     True
     """
-    return NotImplemented
+    return rand(class_size, len(max_scores))*max_scores[0]
 
 
 
@@ -88,7 +88,7 @@ def simulate_grade_df(class_size, grade_items={'F':100,'M':100,'HW':10}):
     >>> simulate_grade_df(4,{'M':5,'F':5,'HW':5}).shape == (4,3)
     True
     """
-    return NotImplemented
+    return DataFrame(simulate_grades(class_size, grade_items.values()), columns=grade_items.keys())
 
 
 
@@ -143,7 +143,10 @@ class GradeBook(object):
         >>> a.max_scores[0] == 30
         True
         """
-        return NotImplemented
+        self.raw_grades = DataFrame(grade_arr, student_ids, item_list)
+        self.total_grades = None
+        self.letter_grades = None
+        self.max_scores = max_scores
 
     def compute_total_grades(self, item_weights=None, max_score=100):
         """
@@ -181,9 +184,10 @@ class GradeBook(object):
         >>> a.total_grades['34'] == 10
         True
         """
-        return NotImplemented
-
-
+        weight = self.raw_grades*item_weights*self.max_scores
+        ave = [sum(weight.loc[row]) for row in weight.index.values]
+        self.total_grades = Series(ave, index=self.raw_grades.index.values)
+        return self.total_grades
 
 if __name__ == "__main__":
     import doctest
