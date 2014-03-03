@@ -53,10 +53,7 @@ def decision_rule(x, y, z):
     >>> decision_rule(False, False, False)
     False
     """
-    
-     
-    return NotImplemented 
-
+    return (x and y) or z 
 
 #---------------------------------------------------------------------------
 # QUESTION 2: STRINGS AND IF STATEMENTS (10 points)
@@ -86,8 +83,10 @@ def compare_string_length(x, y):
     >>> compare_string_length(True, 1)
     -1
     """
-
-    return NotImplemented        
+    x, y = str(x), str(y)
+    if len(y) > len(x): return 1
+    elif len(y) == len(x): return 0
+    elif len(y) < len(x): return -1        
 
 
 #---------------------------------------------------------------------------
@@ -115,8 +114,10 @@ def compute_grade(grades, k):
     >>> compute_grade([1,2,3,4], 3)
     4.0
     """
-    
-    return NotImplemented
+    while k != 0:
+	grades.remove(min(grades))
+        k -= 1
+    return float(sum(grades)/len(grades))
     
 
 #---------------------------------------------------------------------------
@@ -174,10 +175,11 @@ class DNA(object):
         >>> DNA('AGTCCACCCTAAACTCCACAG' * 4).to_protein()
         'spp-tpqspp-tpqspp-tpqspp-tpq'
         """
-        
-        return NotImplemented
-        
-
+        i, n, self.protein = 0, len(self.dna), ''
+        while i < n:
+	    self.protein += self.codon2amino[self.dna[i:i+3]]
+	    i += 3
+	return self.protein
 
 
     def __init__(self, dna):
