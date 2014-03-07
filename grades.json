@@ -10,15 +10,37 @@
             "possible": 18
         }, 
         "lab3": {
-            "earned": 27, 
+            "earned": 30, 
+            "hash": "f0516ef76cd13a9c7574e402adcd06c12636bed6", 
+            "note": "", 
+            "penalty": 0, 
             "possible": 30
         }, 
         "lab4": {
             "earned": 30, 
+            "hash": "f0516ef76cd13a9c7574e402adcd06c12636bed6", 
+            "note": "", 
+            "penalty": 0, 
             "possible": 30
+        }, 
+        "lab5": {
+            "earned": 24, 
+            "hash": "f0516ef76cd13a9c7574e402adcd06c12636bed6", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 30
+        }, 
+        "midterm": {
+            "earned": 38, 
+            "hash": "f0516ef76cd13a9c7574e402adcd06c12636bed6", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 40
         }
     }, 
+    "lab": 2, 
     "login": "deadmau", 
     "name": "Ki Hyun Won", 
+    "status": "enrolled", 
     "url": "git@github.com:deadmau/stat133.git"
 }
