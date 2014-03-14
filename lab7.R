@@ -37,12 +37,11 @@ createVector1  = function(n) {
     # the vector (1,..., n-1, n, n-1, n-2, ..., 1), where n is 
     # a natural number (1,2,3,...) passed as the function argument.
     out <- c()
-    for(i in 1:2*n-1){
-        if(i <= n){
-            out[i] = as.integer(i)
-        }else{
-            out[i] = n-(as.integer(i)-n)
-        }
+    for (i in 1:n){
+        out[i] = as.integer(i)
+    }
+    for(j in 1:n-1){
+        out[j+n] = n - as.integer(j)
     }
     return (out)
 }
@@ -164,12 +163,13 @@ createVector4  = function(a, b, s) {
     #    where a < b, a+ns <= b, and a+(n+1)s > b
     
     out <- c()
-    i <- 1
-    n <- 0
-    while(a+n*s <= b)
+    i = 1
+    n = 0
+    while(a+n*s <= b){
         out[i] = exp(a+n*s)*cos(a+n*s)
-        i <- i + 1
-        n <- n + 1
+        i = i + 1
+        n = n + 1
+    }
     return (out)
 }
 
