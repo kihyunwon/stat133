@@ -39,9 +39,9 @@ createVector1  = function(n) {
     out <- c()
     for(i in 1:2*n-1){
         if(i <= n){
-            out[i] = i
+            out[i] = as.integer(i)
         }else{
-            out[i] = n-(i-n)
+            out[i] = n-(as.integer(i)-n)
         }
     }
     return (out)
@@ -118,7 +118,7 @@ createVector3  = function(label, n) {
 
     out <- c()
     for(i in 1:n)
-        out[i] = sprintf("%s %d", label, i)
+        out[i] = sprintf("%s %d", label, as.integer(i))
     return (out)
 }
 
