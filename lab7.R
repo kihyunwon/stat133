@@ -40,12 +40,11 @@ createVector1  = function(n) {
     for(i in 1:2*n-1){
         if(i <= n){
             out[i] = i
-        }
-        else{
+        }else{
             out[i] = n-(i-n)
         }
     }
-    return out
+    return (out)
 }
 
 tryCatch ( checkEquals(createVector1(3), c(1,2,3,2,1)), 
@@ -69,16 +68,13 @@ createVector2  = function(a,b,c,k,l,m) {
     # m times. 
 
     out <- c()
-    for(i in 1:k){
+    for(i in 1:k)
         out[i] = a
-    }
-    for(j in 1:l){
+    for(j in 1:l)
         out[j+k] = b
-    }
-    for(h in 1:m){
+    for(h in 1:m)
         out[h+k+l] = c
-    }
-    return out
+    return (out)
 }
 
 # Tests:
@@ -121,10 +117,9 @@ createVector3  = function(label, n) {
     # label is a string and n is an integer.
 
     out <- c()
-    for(i in 1:n){
+    for(i in 1:n)
         out[i] = sprintf("%s %d", label, i)
-    }
-    return out
+    return (out)
 }
 
 # Tests:
@@ -171,12 +166,11 @@ createVector4  = function(a, b, s) {
     out <- c()
     i <- 1
     n <- 0
-    while(a+n*s <= b){
+    while(a+n*s <= b)
         out[i] = exp(a+n*s)*cos(a+n*s)
         i <- i + 1
         n <- n + 1
-    }
-    return out
+    return (out)
 }
 
 # Tests:
