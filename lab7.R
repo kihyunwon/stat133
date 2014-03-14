@@ -36,8 +36,16 @@ createVector1  = function(n) {
     # Implement this function body so that it returns
     # the vector (1,..., n-1, n, n-1, n-2, ..., 1), where n is 
     # a natural number (1,2,3,...) passed as the function argument.
-
-    "NotImplemented"
+    out <- c()
+    for(i in 1:2*n-1){
+        if(i <= n){
+            out[i] = i
+        }
+        else{
+            out[i] = n-(i-n)
+        }
+    }
+    return out
 }
 
 tryCatch ( checkEquals(createVector1(3), c(1,2,3,2,1)), 
@@ -60,7 +68,17 @@ createVector2  = function(a,b,c,k,l,m) {
     # repeated k times, b is repeated l times, and c is repeated 
     # m times. 
 
-    "NotImplemented"
+    out <- c()
+    for(i in 1:k){
+        out[i] = a
+    }
+    for(j in 1:l){
+        out[j+k] = b
+    }
+    for(h in 1:m){
+        out[h+k+l] = c
+    }
+    return out
 }
 
 # Tests:
@@ -102,7 +120,11 @@ createVector3  = function(label, n) {
     # the character vector (label 1, label 2, ..., label n), where
     # label is a string and n is an integer.
 
-    "NotImplemented"
+    out <- c()
+    for(i in 1:n){
+        out[i] = sprintf("%s %d", label, i)
+    }
+    return out
 }
 
 # Tests:
@@ -146,7 +168,15 @@ createVector4  = function(a, b, s) {
     # (exp(a)cos(a), exp(a+s)cos(a+s), exp(a+2s)cos(a+2s),...,exp(a+ns)cos(a+ns))
     #    where a < b, a+ns <= b, and a+(n+1)s > b
     
-    "NotImplemented"
+    out <- c()
+    i <- 1
+    n <- 0
+    while(a+n*s <= b){
+        out[i] = exp(a+n*s)cos(a+n*s)
+        i <- i + 1
+        n <- n + 1
+    }
+    return out
 }
 
 # Tests:
