@@ -30,6 +30,13 @@
             "penalty": 0, 
             "possible": 30
         }, 
+        "lab7": {
+            "earned": 24, 
+            "hash": "24382ae28c7ee6a6e6abbfd7472bf10d0fe6723e", 
+            "note": "Infinite while in bdde924a02f1748f06a064a6bb7b2ec38ff12887", 
+            "penalty": 2, 
+            "possible": 30
+        }, 
         "midterm": {
             "earned": 38, 
             "hash": "f0516ef76cd13a9c7574e402adcd06c12636bed6", 
