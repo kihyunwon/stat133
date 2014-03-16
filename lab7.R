@@ -166,10 +166,11 @@ createVector4  = function(a, b, s) {
     out <- c()
     i <- 1
     n <- 0
-    while(a+n*s <= b)
+    while(a+n*s <= b) {
         out[i] = exp(a+n*s)*cos(a+n*s)
         i <- i + 1
         n <- n + 1
+    }
     return (out)
 }
 
