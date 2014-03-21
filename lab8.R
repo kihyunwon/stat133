@@ -48,10 +48,14 @@ simulateGradeBook  = function(mStudents, nItems, scoreRange=c(0,100)){
     # Moreover, the simulated grades should satisfy the following constrains:
     # (1) No grade should be below scoreRange[1] nor above scoreRange[2]
     # (2) The class grades for each grade items (i.e. each column) should be
-    # normally distributed with mean 50 and variance 10 
+    # normally distributed with mean 50 and std 10
     # (3) The returned grades should not have any decimal part
-
-    "NotImplemented"
+    c1 <- c()
+    for(i in 1:nItems){
+        c1[i] = floor(rnorm(scoreRange, mean=50, sd=10))[1]
+    }
+    a = matrix(c1 ,nrow=mStudents, ncol=nItems, byrow=TRUE)
+    return (a)
 }
 
 tryCatch(
@@ -104,7 +108,15 @@ solveLinEq  = function(A, b) {
     warning1 = "I don't know how to solve for matrices with %d rows and %d columns"
     warning2 = "The matrix is not invertible: too tough for me!"
     warning3 = "The vector has length %d, but the matrix is a %d x %d matrix: impossible problem!"
-    "NotImplemented"
+    if(dim(A)[1] != dim(A)[2])
+        sprintf (warning1, dim(A)[1], dim(A)[2])
+    if(dim(A)[1] != length(b))
+        sprintf (warning3, dim(A)[1], length(b))
+    tryCatch (
+        checkEquals(solve(A), diag(dim(A)[1])),
+        error = warning2
+    )
+    return (solve(A)*b)
 }
 
 # Tests:
