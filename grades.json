@@ -37,6 +37,13 @@
             "penalty": 2, 
             "possible": 30
         }, 
+        "lab8": {
+            "earned": 0, 
+            "hash": "5dcbdcd5f0394094d9e73c209246989f8be7e364", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 30
+        }, 
         "midterm": {
             "earned": 38, 
             "hash": "f0516ef76cd13a9c7574e402adcd06c12636bed6", 
