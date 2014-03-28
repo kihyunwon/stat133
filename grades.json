@@ -31,8 +31,8 @@
             "possible": 30
         }, 
         "lab7": {
-            "earned": 24, 
-            "hash": "24382ae28c7ee6a6e6abbfd7472bf10d0fe6723e", 
+            "earned": 28, 
+            "hash": "b27956823a5f014e1aca1b4564e583f035fea28a", 
             "note": "Infinite while in bdde924a02f1748f06a064a6bb7b2ec38ff12887", 
             "penalty": 2, 
             "possible": 30
@@ -45,7 +45,7 @@
             "possible": 40
         }
     }, 
-    "lab": 2, 
+    "lab": "2", 
     "login": "deadmau", 
     "name": "Ki Hyun Won", 
     "status": "enrolled", 
