@@ -1,0 +1,26 @@
+INFO:root:(0 points) os.path.isfile("ex5.R") is True
+INFO:root:Executed R('x1 = c(10000, 1:999)')
+INFO:root:Executed R('x2 = c(1:900, rep(NA, 100))')
+INFO:root:Executed R('x3 = c(1:800, rep(NA, 200))')
+INFO:root:Executed R('y  = c(1:999, NA)')
+INFO:root:Executed R('naR = 0.5; naC = 0.05')
+INFO:root:Executed R('data = data.frame(X1=x1, X2=x2, X3=x3, X4=y, X5=y, X6=y, X7=y, X8=y, X9=y, X10=y)')
+INFO:root:Executed R('cleanData = data[-c(1,1000), -c(2,3)]')
+INFO:root:Executed R('dfDiag = dfDiagnosis(data, naRow=naR, naCol=naC)')
+INFO:root:(3 points) R('all.equal(class(dfDiag), \'dfDiagnosis\')')[0] is True
+INFO:root:(3 points) R('all.equal(length(dfDiag), 6)')[0] is True
+INFO:root:(3 points) R('all.equal(dfDiag$rawData, data)')[0] is True
+INFO:root:(3 points) R('all.equal(dfDiag$thresholds, c(naR,naC))')[0] is True
+ERROR:root:(3 points) Checking R('all.equal(dfDiag$badRows, 1000)')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Mean relative difference: 499
+ERROR:root:(3 points) Checking R('all.equal(dfDiag$badCols, c(2,3))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Numeric: lengths (1, 2) differ
+ERROR:root:(3 points) Checking R('all.equal(dfDiag$outliers, list(c(1,1)))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Length mismatch: comparison on first 1 components
+ERROR:root:(3 points) Checking R('all.equal(dfDiag$cleanData, cleanData)')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Names: 3 string mismatches
+INFO:root:You got a 12 out of 24.
